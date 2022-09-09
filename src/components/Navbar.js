@@ -4,10 +4,10 @@ import {Link, NavLink} from 'react-router-dom'
 
 export default function Navbar() {
 
-  const navLinkStyles = ()=>{
+  const navLinkStyles = ({isActive})=>{
     return {
-      fontWeight:'bold',
-      textDecoration:'none',
+      fontWeight: isActive ? 'bold':'normal',
+      textDecoration: isActive ? 'none':'underline',
       padding:'1em'
     }
   }
@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav>
         <NavLink to="/" style={navLinkStyles} >Home</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about" style={navLinkStyles}>About</NavLink>
     </nav>
   )
 }
